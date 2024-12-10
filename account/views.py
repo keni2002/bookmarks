@@ -10,6 +10,10 @@ from django.contrib.auth.decorators import login_required
 def dashboard(request):
     return render(request,'account/dashboard.html',{'section':'dashboard'})
 
+@login_required
+def test(request):
+    return HttpResponse("MIERCOLES")
+
 
 def user_login(request):
     if request.method == 'POST':
