@@ -3,6 +3,11 @@
 {% block title %}Log-in{% endblock title %}Log-in
 {% block content %}
     <h1>Log in</h1>
+    <p>
+        Please, use the following form to log-in. 
+        If you don't have an account <a href="{% url "register" %}">register here</a>.
+    </p>
+       
     <div class="login-form">
         <form action="{% url 'login' %}" method="post">
             {{form.as_p}}

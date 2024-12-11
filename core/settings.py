@@ -122,7 +122,10 @@ EMAIL_HOST = env('EMAIL_HOST')
 EMAIL_HOST_USER =  env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 EMAIL_PORT=env('EMAIL_PORT')
-EMAIL_USE_TLS= not bool(env('EMAIL_USE_TLS'))
+EMAIL_USE_TLS= env('EMAIL_USE_TLS') == "True"
 EMAIL_USE_SSL= env('EMAIL_USE_SSL') == "True"
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
